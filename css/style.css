@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Poppins', sans-serif;
+  -webkit-perspective: 100000px;
+          perspective: 100000px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card-container {
+  width: 100%;
+  min-height: 100%;
+  margin: auto;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, #213a3f), to(rgba(63, 172, 205, 0.918)));
+  background: linear-gradient(#213a3f 80%, rgba(63, 172, 205, 0.918));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.card-container::before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  -webkit-animation-name: colors;
+          animation-name: colors;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-clip-path: circle(50px at center 10%);
+          clip-path: circle(50px at center 10%);
+}
+
+@-webkit-keyframes colors {
+  0% {
+    background: -webkit-gradient(linear, left top, left bottom, from(#29484e), to(rgba(63, 172, 205, 0.918)));
+    background: linear-gradient(#29484e, rgba(63, 172, 205, 0.918));
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+  }
+  50% {
+    background: -webkit-gradient(linear, left top, left bottom, from(#29484e), to(rgba(63, 172, 205, 0.918)));
+    background: linear-gradient(#29484e, rgba(63, 172, 205, 0.918));
+    -webkit-transform: translateX(10%) rotate(360deg);
+            transform: translateX(10%) rotate(360deg);
+  }
+  100% {
+    background: -webkit-gradient(linear, left top, left bottom, from(#29484e), to(rgba(63, 172, 205, 0.918)));
+    background: linear-gradient(#29484e, rgba(63, 172, 205, 0.918));
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+  }
+}
+
+@keyframes colors {
+  0% {
+    background: -webkit-gradient(linear, left top, left bottom, from(#29484e), to(rgba(63, 172, 205, 0.918)));
+    background: linear-gradient(#29484e, rgba(63, 172, 205, 0.918));
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+  }
+  50% {
+    background: -webkit-gradient(linear, left top, left bottom, from(#29484e), to(rgba(63, 172, 205, 0.918)));
+    background: linear-gradient(#29484e, rgba(63, 172, 205, 0.918));
+    -webkit-transform: translateX(10%) rotate(360deg);
+            transform: translateX(10%) rotate(360deg);
+  }
+  100% {
+    background: -webkit-gradient(linear, left top, left bottom, from(#29484e), to(rgba(63, 172, 205, 0.918)));
+    background: linear-gradient(#29484e, rgba(63, 172, 205, 0.918));
+    -webkit-transform: translateX(0%) rotate(0deg);
+            transform: translateX(0%) rotate(0deg);
+  }
+}
+
+.card-container .card {
+  width: 250px;
+  min-height: 260px;
+  background: linear-gradient(-120deg, #FA629B, #FF675A 70%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.card-container .card small {
+  margin-top: 20px;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 30px;
+  color: #252525c7;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.card-container .card:hover small {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-container .card:hover img {
+  bottom: -100px !important;
+  -webkit-box-shadow: 0px 10px 50px;
+          box-shadow: 0px 10px 50px;
+}
+
+.card-container .card:hover .content {
+  margin-top: 120px;
+}
+
+.card-container .card .image {
+  width: 100%;
+  position: relative;
+}
+
+.card-container .card .image img {
+  width: 220px;
+  position: absolute;
+  bottom: -130px;
+  left: 15px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.card-container .card .content {
+  text-align: center;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  padding: 5px;
+  text-transform: capitalize;
+}
+
+.card-container .card .content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #202020;
+}
+
+.card-container .card .content p {
+  font-size: 0.8rem;
+  color: #202020;
+}
+
+.card-container .card .content .icons {
+  margin: 10px auto;
+  font-size: 1.3rem;
+}
+
+.card-container .card .content .icons i {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  color: #202020;
+}
+
+.card-container .card .content .icons .fa-facebook:hover {
+  color: #087CEA;
+}
+
+.card-container .card .content .icons .fa-youtube:hover {
+  color: #fc1818;
+}
+
+.card-container .card .content .icons .fa-pinterest:hover {
+  color: #25b839;
+}
+/*# sourceMappingURL=style.css.map */

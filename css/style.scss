@@ -1,0 +1,123 @@
+// General Designs
+*{margin: 0;padding: 0;box-sizing: border-box;}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    perspective: 100000px;
+    height: 100vh;
+    overflow: hidden
+}
+//The Main Font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+// Variables
+$mainColor: #FF675A;
+$secondColor: #FA629B;
+$color: #202020;
+$letterSpacing: 1px;
+$lineHeight:1.5;
+$transition: all 0.4s ease-in-out;
+// the card design
+.card-container{
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    background: linear-gradient( rgb(33, 58, 63) 80% , rgba(63, 172, 205, 0.918));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: $transition;
+    &::before{
+        content: '';
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        animation-name: colors;
+        animation-duration: 8s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        clip-path: circle(50px at center 10%);
+    }
+    // the animation
+    @keyframes colors {
+        0%{
+            background: linear-gradient( rgb(41, 72, 78), rgba(63, 172, 205, 0.918));
+            transform: translateX(0%) rotate(0deg);
+        }
+        50%{
+            background: linear-gradient( rgb(41, 72, 78), rgba(63, 172, 205, 0.918));
+            transform: translateX(10%) rotate(360deg);
+        }
+        100%{
+            background: linear-gradient( rgb(41, 72, 78), rgba(63, 172, 205, 0.918));
+            transform: translateX(0%) rotate(0deg);
+        }
+    }
+    .card{
+        width: 250px;
+        min-height: 260px;
+        background: linear-gradient(-120deg,$secondColor, $mainColor 70%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        transition: $transition;
+        small{
+            margin-top: 20px;
+            font-size:1rem;
+            position: absolute;bottom: 30px;
+            color: #252525c7;
+            letter-spacing: $letterSpacing + 2;
+            text-transform: uppercase;
+            text-align: center;
+            transition: $transition;
+        }
+        &:hover{
+            small{opacity: 0;pointer-events: none;}
+            img{bottom: -100px !important; box-shadow: 0px 10px 50px ;}
+            .content{margin-top: 120px;}
+        }
+        .image{
+            width: 100%;
+            position: relative;
+            img{
+                width: 220px;
+                position: absolute;
+                bottom: -130px;
+                left: 15px;
+                transition: $transition;
+                }
+        }
+        .content{
+            text-align: center;
+            transition: $transition;
+            letter-spacing: $letterSpacing;
+            line-height: $lineHeight;
+            padding: 5px;
+            text-transform: capitalize;
+            h3{
+                font-size: 1.3rem;
+                font-weight: 600;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+                color: $color
+            }
+            p{
+                font-size: 0.8rem;
+                color: $color
+            }
+            .icons{
+                margin: 10px auto;
+                font-size: 1.3rem;
+                i{transition: $transition;color: $color}
+                .fa-facebook:hover{color: #087CEA;}
+                .fa-youtube:hover{color: rgb(252, 24, 24);}
+                .fa-pinterest:hover{color: #25b839;}
+            }
+        }
+    }
+}
